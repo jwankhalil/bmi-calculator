@@ -67,14 +67,22 @@ String  getGender (){
   }
 
   void _getResult() {
-    if (bmi < 18.5) {
+    if (bmi < 16.0) {
+      result.value = 'Severely Underweight';
+    } else if (bmi > 16.0 && bmi < 18.4) {
       result.value = 'Underweight';
     } else if (bmi > 18.5 && bmi < 24.9) {
-      result.value = 'Healthy Weight';
+      result.value = 'Normal';
     } else if (bmi > 25.0 && bmi < 29.9) {
       result.value = 'Overweight';
-    } else {
-      result.value = 'Obesity';
+    } else if (bmi > 30.0 && bmi < 34.9) {
+      result.value = 'Moderately Obese';
+    } 
+    else if (bmi > 35.0 && bmi < 39.9) {
+      result.value = 'Severely Obese';
+    } 
+    else {
+      result.value = 'Morbidly Obese';
     }
    
   }
